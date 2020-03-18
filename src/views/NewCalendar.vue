@@ -7,8 +7,9 @@
       <option v-for="category in categories" :key="category.id">{{ category.display_name }}</option>
     </select>
     <br>
-    <p>Message is: {{ name }}</p>
-    <span>Selected: {{ selected }}</span>
+    <p>Name: {{ name }}</p>
+    <span>Category: {{ selected }}</span>
+    <button :click="submit">Submit</button>
   </div>
 </template>
 
@@ -31,6 +32,11 @@ export default {
       categories: function() {
         return this.$store.getters.categories;
       }
+  },
+  methods: {
+    submit() {
+      console.log("Submitting", this.name, this.selected)
+    }
   }
 }
 </script>
