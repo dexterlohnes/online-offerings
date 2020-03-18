@@ -11,7 +11,7 @@
       </select>
     </div>
     <div class="row">
-      <b-button v-on:click="doSubmit(submission)">Submit</b-button>
+      <b-button v-on:click="submit(submission)">Submit</b-button>
     </div>
   </div>
 </template>
@@ -50,15 +50,15 @@ export default {
       }
   },
   methods: {
-    ...mapActions({
-      submit: 'createCalendar'
-    }),
+    ...mapActions([
+      'createCalendar'
+    ]),
     clearFields() {
       this.selected = "";
       this.name = "";
     },
-    doSubmit(submission) {
-      this.submit(submission);
+    submit(submission) {
+      this.createCalendar(submission);
       this.clearFields();
     }
   }
