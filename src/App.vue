@@ -8,6 +8,18 @@
   </div>
 </template>
 
+<script>
+// @ is an alias to /src
+
+export default {
+  created() {
+      console.log("Loading categories on start up")
+      this.$store.dispatch('fetchCategories');
+  }
+}
+</script>
+
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
