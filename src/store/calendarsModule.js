@@ -10,6 +10,21 @@ export const calendarsModule = {
     },
   },
   actions: {
+    fetchCalendars(context) {
+      context.commit('SET_LOADING', true);
+      DB.collectionGroup("calendars").get().then((querySnapshot) => {
+        if (context.state.debug)
+          console.log("Fetched all calendars");
+        var objs = [];
+        querySnapshot.forEach((doc) => {
+          var obj = doc.data();
+          obj.id = doc.id;
+          objs.push(obj);
+        });
+        context.commit('SET_CALENDARS', objs);
+        context.commit('SET_LOADING', false);
+      });
+    },
     fetchCalendarsForCategory(context, id) {
       context.commit('SET_LOADING', true);
       DB.collection("categories").doc(id).collection("calendars").get().then((querySnapshot) => {

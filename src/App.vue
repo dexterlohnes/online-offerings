@@ -15,10 +15,10 @@ export default {
   created() {
       console.log("Loading categories on start up")
       this.$store.dispatch('fetchCategories');
+      this.$store.dispatch('fetchCalendars');
   }
 }
 </script>
-
 
 <style>
 #app {

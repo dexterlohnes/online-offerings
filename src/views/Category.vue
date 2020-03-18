@@ -26,9 +26,6 @@ export default {
         console.log("Found cals:", cals)
         return cals;
       }
-  },
-  created() {
-    this.$store.dispatch('fetchCalendarsForCategory', this.$route.params.id);
   }
 }
 </script>
