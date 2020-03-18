@@ -17,11 +17,6 @@ export default {
   components: {
     // HelloWorld,
     Categories
-  },
-  methods: {
-    loadCategories: function() {
-      
-    }
   }
 }
 </script>
