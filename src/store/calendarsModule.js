@@ -63,5 +63,8 @@ export const calendarsModule = {
     calendarsForCategory: (state) => (id) => {
       return state.calendars.filter(it => it.collection === id);
     },
+    calendars (state) {
+      return state.calendars;
+    }
   }
 };
