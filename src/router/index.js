@@ -1,14 +1,23 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Auth from '../components/Auth.vue'
+import AuthSuccess from '../components/AuthSuccess.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
     component: Home
+  },
+  {
+    path: '/auth',
+    component: Auth
+  },
+  {
+    path: '/auth/success',
+    component: AuthSuccess
   },
   {
     path: '/about',
@@ -38,7 +47,6 @@ const routes = [
     path: '/events/new',
     component: () => import('../views/NewEvent.vue')
   }
-
 ]
 
 const router = new VueRouter({

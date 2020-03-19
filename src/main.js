@@ -7,6 +7,8 @@ import store from './store'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import {Auth} from "./firebase/auth.js"
+
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
@@ -21,5 +23,16 @@ Vue.use(Vuex);
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  created() {
+    console.log("In created")
+    Auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.$router.push('/auth/success')
+      } else {
+        console.log("No User. Moving to auth...")
+        this.$router.push('/auth')
+      }
+    })
+  }
 }).$mount('#app')
