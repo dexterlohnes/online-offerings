@@ -1,7 +1,7 @@
 # Online Offerings
 
 ## What is it?
-Online Offerings aims to provide a simple website that allows people to post and browse online exercise classes, performances, group meditations, whatever we may feel we need remote access to in order to stay sane and healthy while in quarantine/shelter-in-place.
+A simple web app that allows people to post and browse online exercise classes, performances, group meditations, whatever we may feel we need remote access to in order to stay sane and healthy while in quarantine/shelter-in-place.
 
 ## Project setup
 ```
