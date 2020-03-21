@@ -8,6 +8,19 @@ A simple web app that allows people to post and browse online exercise classes, 
 yarn install
 ```
 
+## You will need a local dev ENV file to configure Firebase
+projectRoot/.env.development.local
+```
+VUE_APP_FIREBASE_API_KEY=
+VUE_APP_FIREBASE_AUTH_DOMAIN=
+VUE_APP_FIREBASE_DB_URL=
+VUE_APP_FIREBASE_PROJECT_ID=
+VUE_APP_FIREBASE_STORAGE_BUCKET=
+VUE_APP_FIREBASE_MESSAGING_SENDER_ID=
+VUE_APP_APP_ID=
+VUE_APP_MEASUREMENT_ID=
+```
+
 ### Compiles and hot-reloads for development
 ```
 yarn serve
